@@ -36,7 +36,21 @@ def cadastro(id):
   usuarioModelo["senha"] = dadosDoUsuario[2]
 
   usuarios.append(usuarioModelo)
+  
+  print("\n\nUSUARIO CADASTRO COM SUCESSO!!\n")
 
+
+def inputsLista():
+  print("\n\n\nVoce deseja listar usuarios usando qual filtro")
+  print("[1] - Listar todos por ordem de criacao")
+  print("[2] - Listar todos por ordem alfabetica")
+  print("[3] - Listar apenas um usuario por nome")
+  print("[4] - VOLTAR\n\n")
+
+  return int(input())
+
+def listar():
+  sair = False
 
 def main():
   sair = False
