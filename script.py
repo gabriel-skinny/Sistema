@@ -10,6 +10,33 @@ def intercaoInicial():
 
   return int(input())
 
+def inputsCadastroUsuario():
+    print("\n\nCadastro de usuario")
+    print("Digite o nome desejado: \n")
+    nome = input()
+    print("Digite o e-mail desejado: \n")
+    email = input()
+    print("Digite a senha desejado: \n")
+    senha = input()
+
+    return [nome, email, senha]
+
+def cadastro(id):
+  dadosDoUsuario = inputsCadastroUsuario()
+
+  usuarioModelo = {
+    "id": id,
+    "nome": "",
+    "email": "",
+    "senha": ""
+  }
+
+  usuarioModelo["nome"] = dadosDoUsuario[0]
+  usuarioModelo["email"] = dadosDoUsuario[1]
+  usuarioModelo["senha"] = dadosDoUsuario[2]
+
+  usuarios.append(usuarioModelo)
+
 
 def main():
   sair = False
