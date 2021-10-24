@@ -56,10 +56,10 @@ def inputsLista():
     return int(input())
 
 
-def forEachUsuariosPrintar(lista, length):
-    for index in range(length):
-        print("Nome: {}:\n".format(lista[index]["nome"]))
-        print("E-mail: {}\n\n".format(lista[index]["email"]))
+def forEachUsuariosPrintar(lista):
+    for usuario in lista:
+        print("Nome: {}:\n".format(usuario["nome"]))
+        print("E-mail: {}\n\n".format(usuario["email"]))
 
 
 def forEachUsuariosCondicao(condicao, tipo):
@@ -86,20 +86,17 @@ def listar():
         if escolhaDeFiltro == 1:
             ordemDeCriacaoUsuarios = usuarios
             ordemDeCriacaoUsuarios.sort(key=get_id)
-            length = len(ordemDeCriacaoUsuarios)
 
             print("\n\nUsuarios: \n")
-            forEachUsuariosPrintar(ordemDeCriacaoUsuarios, length)
+            forEachUsuariosPrintar(ordemDeCriacaoUsuarios)
 
         if escolhaDeFiltro == 2:
             sortedUsuarios = usuarios
             sortedUsuarios.sort(key=get_nome)
 
-            length = len(sortedUsuarios)
-
             print("\n\nUsuarios em ordem alfabetica: \n")
 
-            forEachUsuariosPrintar(sortedUsuarios, length)
+            forEachUsuariosPrintar(sortedUsuarios)
 
         if escolhaDeFiltro == 3:
             print("Digite um nome")
