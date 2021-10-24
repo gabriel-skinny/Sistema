@@ -76,12 +76,12 @@ def listar():
         escolhaDeFiltro = inputsLista()
 
         if escolhaDeFiltro == 1:
-            length = len(usuarios)
+            ordemDeCriacaoUsuarios = usuarios
+            ordemDeCriacaoUsuarios.sort(key=get_id)
+            length = len(ordemDeCriacaoUsuarios)
 
             print("\n\nUsuarios: \n")
-            for index in range(length):
-                print("Nome: {}:\n".format(usuarios[index]["nome"]))
-                print("E-mail: {}\n\n".format(usuarios[index]["email"]))
+            forEachUsuariosPrintar(ordemDeCriacaoUsuarios, length)
 
         if escolhaDeFiltro == 2:
             sortedUsuarios = usuarios
@@ -90,20 +90,14 @@ def listar():
             length = len(sortedUsuarios)
 
             print("\n\nUsuarios em ordem alfabetica: \n")
-            for index in range(length):
-                print("Nome: {}:\n".format(sortedUsuarios[index]["nome"]))
-                print("E-mail: {}\n\n".format(sortedUsuarios[index]["email"]))
+
+            forEachUsuariosPrintar(sortedUsuarios, length)
 
         if escolhaDeFiltro == 3:
             print("Digite um nome")
             nome = input()
-            length = len(usuarios)
 
-            for index in range(length):
-                if usuarios[index]["nome"] == nome:
-                    print("\n\nUsuario escolhido foi {}:\n".format(nome))
-                    print("Nome: {}".format(nome))
-                    print("E-mail: {} \n\n\n".format(usuarios[index]["email"]))
+            forEachUsuariosCondicao(nome, "nome")
 
         if escolhaDeFiltro == 4:
             sair = True
