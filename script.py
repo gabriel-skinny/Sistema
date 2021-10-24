@@ -1,6 +1,14 @@
 usuarios = []
 
 
+def get_nome(usuarios):
+    return usuarios.get("nome")
+
+
+def get_id(usuarios):
+    return usuarios.get("id")
+
+
 def intercaoInicial():
     print("\nQual processo vc deseja fazer: \n")
     print("[1] - Cadastrar usuario")
