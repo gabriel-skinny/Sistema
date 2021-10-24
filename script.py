@@ -143,9 +143,9 @@ def main():
             listar()
 
         if tarefaEscolhida == 3:
-            print("função de remover")
+            remover()
         if tarefaEscolhida == 4:
-            print("função de cadastro")
+            editar()
         if tarefaEscolhida == 5:
             print("\n\nVoce saiu do sistema!!\n\n")
             sair = True
