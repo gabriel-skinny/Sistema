@@ -103,6 +103,19 @@ def listar():
             sair = True
 
 
+def inputsRemover():
+    print("\nDigite o nome do usuario que deseja remover\n")
+    return input()
+
+
+def remover():
+    nomedoUsuario = inputsRemover()
+
+    usuarioIndex = forEachUsuariosCondicao(nomedoUsuario, "nome")
+    usuarios.pop(usuarioIndex)
+    print("\nUsuario removido com sucesso!")
+
+
 def main():
     sair = False
     countId = 0
