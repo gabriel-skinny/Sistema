@@ -116,6 +116,19 @@ def remover():
     print("\nUsuario removido com sucesso!")
 
 
+def editar():
+    print("Digite o E-mail")
+    email = input()
+
+    usuarioIndex = forEachUsuariosCondicao(email, "email")
+
+    print("Digite o novo nome: \n")
+    nome = input()
+    usuarios[usuarioIndex]["nome"] = nome
+
+    print("\nNome alterado com sucesso!! \n\n")
+
+
 def main():
     sair = False
     countId = 0
