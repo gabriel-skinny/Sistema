@@ -15,7 +15,7 @@
 ## :information_source: Como usar no seu computador
 
   - Instale o compilador do [python](https://www.python.org/downloads/) no seu computador
-  - Clone o repositorio com o comando `git clone https://github.com/gabriel-skinny/RPG_python.git`
+  - Clone o repositorio com o comando `git clone https://github.com/gabriel-skinny/Sistema.git`
   - Acesse a pasta do repositorio e digite o comando `python script.py` e o jogo ira rodar no seu terminal 
   
     
