@@ -37,8 +37,7 @@ def procurarUsuarioEmail(email):
         if usuario["email"] == email:
             return True
 
-        else:
-            return False
+    return False
 
 
 def cadastro(id):
@@ -87,10 +86,8 @@ def forEachUsuariosCondicao(condicao, tipo):
             print("\nE-mail: {} \n\n\n".format(usuarios[index]["email"]))
 
             return index
-        else:
-            print("ERRO!!")
-            print("NENHUM USUARIO FOI ENCONTRADO")
-            return -1
+
+    return -1
 
 
 def listar():
@@ -118,7 +115,11 @@ def listar():
             print("Digite um nome")
             nome = input()
 
-            forEachUsuariosCondicao(nome, "nome")
+            indexUsuario = forEachUsuariosCondicao(nome, "nome")
+
+            if indexUsuario == -1:
+                print("\n\nERROR")
+                print("USUARIO NAO ENCONTRADO!\n")
 
         if escolhaDeFiltro == 4:
             sair = True
@@ -142,6 +143,9 @@ def editar():
     email = input()
 
     usuarioIndex = forEachUsuariosCondicao(email, "email")
+
+    if usuarioIndex == -1:
+        return
 
     print("Digite o novo nome: \n")
     nome = input()
