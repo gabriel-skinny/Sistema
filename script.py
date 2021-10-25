@@ -134,6 +134,8 @@ def editar():
     usuarioIndex = forEachUsuariosCondicao(email, "email")
 
     if usuarioIndex == -1:
+        print("\nERRO!")
+        print("USUARIO NAO ENCONTRADO\n\n")
         return
 
     print("Digite o novo nome: \n")
