@@ -123,6 +123,12 @@ def remover():
     nomedoUsuario = inputsRemover()
 
     usuarioIndex = forEachUsuariosCondicao(nomedoUsuario, "nome")
+
+    if usuarioIndex == -1:
+        print("\n\nERROR!")
+        print("USUARIO NAO ENCONTRADO!!!\n\n")
+        return
+
     usuarios.pop(usuarioIndex)
     print("\nUsuario removido com sucesso!")
 
