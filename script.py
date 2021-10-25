@@ -9,15 +9,32 @@ def get_id(usuarios):
     return usuarios.get("id")
 
 
-def intercaoInicial():
-    print("\nQual processo vc deseja fazer: \n")
-    print("[1] - Cadastrar usuario")
-    print("[2] - Exibir usuario")
-    print("[3] - Remover usuario")
-    print("[4] - Editar usuario por e-mail")
-    print("[5] - Sair\n")
+def forEachUsuariosCondicao(condicao, tipo):
+    length = len(usuarios)
 
-    return int(input())
+    for index in range(length):
+        if usuarios[index][tipo] == condicao:
+            print("\n\nUsuario escolhido foi {}:\n".format(condicao))
+            print("Nome: {}".format(usuarios[index]["nome"]))
+            print("\nE-mail: {} \n\n\n".format(usuarios[index]["email"]))
+
+            return index
+
+    return -1
+
+
+def forEachUsuariosPrintar(lista):
+    for usuario in lista:
+        print("Nome: {}:\n".format(usuario["nome"]))
+        print("E-mail: {}\n\n".format(usuario["email"]))
+
+
+def procurarUsuarioEmail(email):
+    for usuario in usuarios:
+        if usuario["email"] == email:
+            return True
+
+    return False
 
 
 def inputsCadastroUsuario():
@@ -30,14 +47,6 @@ def inputsCadastroUsuario():
     senha = input()
 
     return [nome, email, senha]
-
-
-def procurarUsuarioEmail(email):
-    for usuario in usuarios:
-        if usuario["email"] == email:
-            return True
-
-    return False
 
 
 def cadastro(id):
@@ -68,26 +77,6 @@ def inputsLista():
     print("[4] - VOLTAR\n\n")
 
     return int(input())
-
-
-def forEachUsuariosPrintar(lista):
-    for usuario in lista:
-        print("Nome: {}:\n".format(usuario["nome"]))
-        print("E-mail: {}\n\n".format(usuario["email"]))
-
-
-def forEachUsuariosCondicao(condicao, tipo):
-    length = len(usuarios)
-
-    for index in range(length):
-        if usuarios[index][tipo] == condicao:
-            print("\n\nUsuario escolhido foi {}:\n".format(condicao))
-            print("Nome: {}".format(usuarios[index]["nome"]))
-            print("\nE-mail: {} \n\n\n".format(usuarios[index]["email"]))
-
-            return index
-
-    return -1
 
 
 def listar():
@@ -154,6 +143,17 @@ def editar():
     print("\nNome alterado com sucesso!! \n\n")
 
 
+def intercaoInicial():
+    print("\nQual processo vc deseja fazer: \n")
+    print("[1] - Cadastrar usuario")
+    print("[2] - Exibir usuario")
+    print("[3] - Remover usuario")
+    print("[4] - Editar usuario por e-mail")
+    print("[5] - Sair\n")
+
+    return int(input())
+
+
 def main():
     sair = False
     countId = 0
@@ -169,8 +169,10 @@ def main():
 
         if tarefaEscolhida == 3:
             remover()
+
         if tarefaEscolhida == 4:
             editar()
+
         if tarefaEscolhida == 5:
             print("\n\nVoce saiu do sistema!!\n\n")
             sair = True
