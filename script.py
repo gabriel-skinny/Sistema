@@ -44,6 +44,12 @@ def procurarUsuarioEmail(email):
 def cadastro(id):
     dadosDoUsuario = inputsCadastroUsuario()
 
+    usuarioEncontrado = procurarUsuarioEmail(dadosDoUsuario[1])
+    if usuarioEncontrado:
+        print("\nERRO!")
+        print("Esse email ja foi utilizado digite outro se quiser criar um usuario\n")
+        return
+
     usuarioModelo = {"id": id, "nome": "", "email": "", "senha": ""}
 
     usuarioModelo["nome"] = dadosDoUsuario[0]
