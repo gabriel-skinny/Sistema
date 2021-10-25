@@ -32,6 +32,15 @@ def inputsCadastroUsuario():
     return [nome, email, senha]
 
 
+def procurarUsuarioEmail(email):
+    for usuario in usuarios:
+        if usuario["email"] == email:
+            return True
+
+        else:
+            return False
+
+
 def cadastro(id):
     dadosDoUsuario = inputsCadastroUsuario()
 
@@ -75,6 +84,7 @@ def forEachUsuariosCondicao(condicao, tipo):
         else:
             print("ERRO!!")
             print("NENHUM USUARIO FOI ENCONTRADO")
+            return -1
 
 
 def listar():
